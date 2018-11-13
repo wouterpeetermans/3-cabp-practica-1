@@ -10,7 +10,7 @@ int mkFile(int size,string filename){
   for( int i = 0; i < size; i++){
     memblock[i] = rand()%255; 
   }
-  ofstream file (filename, ios::out | ios::trunc);
+  ofstream file (filename, ios::out | ios::trunc | ios::binary);
   if (file.is_open()){
     file.write(memblock, size);
     file.close();
