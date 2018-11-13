@@ -19,22 +19,18 @@ int mkFile(int size,string filename){
   return 0;
 }
 
-int cpuAddOneToArray(char* array, int size){
-  for (int i = 0; i < size; i++){
-    array[i]++;
-  }
-  return 0;
-}
-
-
 
 int main(int argc, char* argv[]){
   string filename = "testing.bin";
+  int fileSize = 1024;
   if ( argc > 1 ){
     filename = argv[1];
   }
+  if ( argc > 2 ){
+    fileSize = stoi (argv[2],nullptr);
+  }
   
-  mkFile(1024,filename);
+  mkFile(fileSize,filename);
   return 0;
 }
 
